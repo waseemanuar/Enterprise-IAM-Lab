@@ -21,6 +21,9 @@ This lab simulates a modern enterprise environment where a hybrid infrastructure
 | **DC01** | LDAP / Active Directory | Windows Server 2022 | `192.168.1.10` |
 | **IAM01** | Keycloak / Docker | Ubuntu Server 22.04 | `192.168.1.11` |
 
+
+![System Architecture](screenshots/architecture_diagram.png)
+
 ###  Technical Stack
 * **Identity:** Microsoft Active Directory
 * **SSO Engine:** Keycloak 24.0 (Docker Container)
@@ -81,3 +84,14 @@ Verification that Active Directory identities have been successfully imported in
 #### 4. End-User Authentication Proof
 Successful login as `jdoe`, showing synchronized user metadata in the account portal.
 ![Login Verification](screenshots/login_verification.jpg)
+
+
+
+---
+
+### 🚀 Future Roadmap & Continuous Improvement
+To further harden this environment and explore advanced IAM architectures, the next phases of this lab will include:
+
+* **Role-Based Access Control (RBAC):** Implementing Group Mappings to automatically assign Keycloak roles based on Active Directory Security Group membership.
+* **Secure LDAP (LDAPS):** Transitioning from standard LDAP to LDAPS (Port 636) by implementing SSL/TLS certificates for encrypted directory communication.
+* **Automated Deployment:** Transitioning the Keycloak setup from manual Docker commands to a full Docker Compose orchestration for better service management.
