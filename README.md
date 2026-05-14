@@ -56,3 +56,28 @@ Established a secure, persistent handshake between Keycloak and the Windows Doma
 ###  Lessons Learned & Troubleshooting
 * **AD Account Policies:** Identified that the "User must change password at next logon" flag interrupts automated LDAP binds, requiring specific account provisioning steps for service users.
 * **YAML Syntax Precision:** Resolved boot-time network failures by auditing Netplan indentation, reinforcing the importance of strict syntax in "Infrastructure as Code" configurations.
+
+### Usage Guide
+**To reproduce this lab environment:**
+* Ensure both VMs are hosted on the same virtual internal network.
+* Configure the Windows DC with a dedicated Service Account.
+* Apply the provided Netplan YAML to the Linux IdP.
+* Verify Port 389 is open on the Windows Firewall.
+
+###  Project Gallery
+
+#### 1. Active Directory Organizational Structure
+Evidence of the user database and OU configuration on Windows Server 2022.
+![AD Structure](screenshots/ad_structure.jpg)
+
+#### 2. Keycloak LDAP Configuration
+Detailed view of the bind settings and service account integration.
+![LDAP Configuration](screenshots/ldap_config.jpg)
+
+#### 3. Successful User Synchronization
+Verification that Active Directory identities have been successfully imported into Keycloak.
+![Sync Success](screenshots/sync_success.jpg)
+
+#### 4. End-User Authentication Proof
+Successful login as `jdoe`, showing synchronized user metadata in the account portal.
+![Login Verification](screenshots/login_verification.jpg)
